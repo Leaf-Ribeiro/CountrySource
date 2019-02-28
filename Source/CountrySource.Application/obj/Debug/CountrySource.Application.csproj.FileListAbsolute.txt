@@ -9,3 +9,14 @@ C:\Users\Rafae\source\repos\CountrySource\CountrySource.Application\obj\Debug\Co
 C:\Users\Rafae\source\repos\CountrySource\CountrySource.Application\obj\Debug\CountrySource.Application.csproj.CopyComplete
 C:\Users\Rafae\source\repos\CountrySource\CountrySource.Application\obj\Debug\CountrySource.Application.dll
 C:\Users\Rafae\source\repos\CountrySource\CountrySource.Application\obj\Debug\CountrySource.Application.pdb
+E:\Projetos\CountrySource\Source\CountrySource.Application\bin\Debug\CountrySource.Application.dll
+E:\Projetos\CountrySource\Source\CountrySource.Application\bin\Debug\CountrySource.Application.pdb
+E:\Projetos\CountrySource\Source\CountrySource.Application\bin\Debug\CountrySource.Contracts.dll
+E:\Projetos\CountrySource\Source\CountrySource.Application\bin\Debug\CountrySource.Domain.dll
+E:\Projetos\CountrySource\Source\CountrySource.Application\bin\Debug\CountrySource.Contracts.pdb
+E:\Projetos\CountrySource\Source\CountrySource.Application\bin\Debug\CountrySource.Domain.pdb
+E:\Projetos\CountrySource\Source\CountrySource.Application\obj\Debug\CountrySource.Application.csprojAssemblyReference.cache
+E:\Projetos\CountrySource\Source\CountrySource.Application\obj\Debug\CountrySource.Application.csproj.CoreCompileInputs.cache
+E:\Projetos\CountrySource\Source\CountrySource.Application\obj\Debug\CountrySource.Application.csproj.CopyComplete
+E:\Projetos\CountrySource\Source\CountrySource.Application\obj\Debug\CountrySource.Application.dll
+E:\Projetos\CountrySource\Source\CountrySource.Application\obj\Debug\CountrySource.Application.pdb

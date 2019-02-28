@@ -10,3 +10,13 @@ C:\Users\Rafae\source\repos\CountrySource\CountrySource.Migration\obj\Debug\Coun
 C:\Users\Rafae\source\repos\CountrySource\CountrySource.Migration\obj\Debug\CountrySource.Migration.dll
 C:\Users\Rafae\source\repos\CountrySource\CountrySource.Migration\obj\Debug\CountrySource.Migration.pdb
 C:\Users\Rafae\source\repos\CountrySource\CountrySource.Migration\obj\Debug\CountrySource.Migration.csprojAssemblyReference.cache
+E:\Projetos\CountrySource\Source\CountrySource.Migration\bin\Debug\CountrySource.Migration.dll
+E:\Projetos\CountrySource\Source\CountrySource.Migration\bin\Debug\CountrySource.Migration.pdb
+E:\Projetos\CountrySource\Source\CountrySource.Migration\bin\Debug\FluentMigrator.dll
+E:\Projetos\CountrySource\Source\CountrySource.Migration\bin\Debug\FluentMigrator.pdb
+E:\Projetos\CountrySource\Source\CountrySource.Migration\bin\Debug\FluentMigrator.xml
+E:\Projetos\CountrySource\Source\CountrySource.Migration\obj\Debug\CountrySource.Migration.csprojAssemblyReference.cache
+E:\Projetos\CountrySource\Source\CountrySource.Migration\obj\Debug\CountrySource.Migration.csproj.CoreCompileInputs.cache
+E:\Projetos\CountrySource\Source\CountrySource.Migration\obj\Debug\CountrySource.Migration.csproj.CopyComplete
+E:\Projetos\CountrySource\Source\CountrySource.Migration\obj\Debug\CountrySource.Migration.dll
+E:\Projetos\CountrySource\Source\CountrySource.Migration\obj\Debug\CountrySource.Migration.pdb
