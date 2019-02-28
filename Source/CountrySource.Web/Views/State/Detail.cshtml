@@ -1,0 +1,42 @@
+﻿@model CountrySource.Web.ViewModels.States.StateDetailViewModel
+
+<h2>Detalhe Estado</h2>
+
+<section>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Nome:</label>
+                @Html.TextBoxFor(a => a.Name, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                Continent:
+                @Html.TextBoxFor(a => a.CountryName, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+    </div>
+    <hr />
+    <h3>Estados:</h3>
+    @for (var i = 0; i < Model.Cities.Count; i += 4)
+    {
+        <div class="row">
+            @foreach (var item in Model.States.Skip(i).Take(4))
+            {
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <span>@item.Name</span>
+
+                    </div>
+                </div>
+            }
+        </div>
+    }
+
+    <div class="row">
+        <div class="btnp-group">
+            <button type="reset" class="btn btn-default" onclick="window.location.href='@Url.Action("List")'">Voltar</button>
+        </div>
+    </div>
+</section>

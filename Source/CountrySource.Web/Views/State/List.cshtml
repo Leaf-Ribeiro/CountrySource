@@ -1,0 +1,124 @@
+﻿@model CountrySource.Web.ViewModels.States.StateListViewModel
+
+@{
+    ViewBag.Title = "List";
+}
+
+@section scripts{
+
+    <script>
+        ajaxForm(null, function (data) {
+            var content = $(data).find("#searchList");
+            $("#searchList").replaceWith(content);
+        }, "frmSearch", true);
+
+        function deleteState(button, id) {
+            if (window.confirm("Você realmente quer remover esse Estado?")) {
+                    $.ajax({
+                        url: '@Url.Action("Delete")',
+                        dataType: 'json',
+                        type: 'post',
+                        data: { id },
+                        success: function (data) {
+                            if (data.Success) {
+                                alert(data.Message);
+                                $(button).closest('tr').remove();
+                            }
+                        },
+                        error: function () {
+                            alert("Houve um erro ao processar a requisiçao.");
+                        },
+                        beforeSend: function () { waitButton(button); },
+                        complete: function () { readyButton(button); }
+                    });
+            }
+        }
+    </script>
+}
+
+<div id="">
+    <h3>Estados</h3>
+    <div class="row">
+        <div class="btn-group">
+            <a class="btn btn-default top-right" href="@Url.Action("Create")">
+                <span>
+                    Adicionar
+                    <i class="glyphicon glyphicon-plus"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-default">
+                <div class="nav nav-justified navbar-nav">
+                    @using (Html.BeginForm("List", "State", FormMethod.Post, new { Id = "frmSearch", @class = "navbar-form navbar-search" }))
+                    {
+                        <div class="input-group">
+                            @Html.TextBoxFor(a => a.SearchText, new { @placeholder = "Search...", @class = "form-control" })
+
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-search btn-info">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                    <span class="label-icon">Buscar</span>
+                                </button>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table-hover table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Nome
+                    </th>
+                    <th>
+                        Pais
+                    </th>
+                    <th width="30">
+
+                    </th>
+                    <th width="20">
+
+                    </th>
+                    <th width="20">
+
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody id="searchList">
+                @foreach (var item in Model.States)
+                {
+                    <tr>
+                        <td>
+                            @item.Name
+                        </td>
+                        <td>
+                            @item.CountryName
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Detail", new { id = item.Id})">Visualizar</a>
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Update", new { id = item.Id })" class="btn btn-sm">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#" class="btn btn-sm" onclick="deleteState(this, '@item.Id');">
+                                <i class="glyphicon glyphicon-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

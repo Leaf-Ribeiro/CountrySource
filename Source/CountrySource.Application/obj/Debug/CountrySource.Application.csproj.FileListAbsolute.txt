@@ -1,0 +1,11 @@
+C:\Users\Rafae\source\repos\CountrySource\CountrySource.Application\bin\Debug\CountrySource.Application.dll
+C:\Users\Rafae\source\repos\CountrySource\CountrySource.Application\bin\Debug\CountrySource.Application.pdb
+C:\Users\Rafae\source\repos\CountrySource\CountrySource.Application\bin\Debug\CountrySource.Contracts.dll
+C:\Users\Rafae\source\repos\CountrySource\CountrySource.Application\bin\Debug\CountrySource.Domain.dll
+C:\Users\Rafae\source\repos\CountrySource\CountrySource.Application\bin\Debug\CountrySource.Contracts.pdb
+C:\Users\Rafae\source\repos\CountrySource\CountrySource.Application\bin\Debug\CountrySource.Domain.pdb
+C:\Users\Rafae\source\repos\CountrySource\CountrySource.Application\obj\Debug\CountrySource.Application.csprojAssemblyReference.cache
+C:\Users\Rafae\source\repos\CountrySource\CountrySource.Application\obj\Debug\CountrySource.Application.csproj.CoreCompileInputs.cache
+C:\Users\Rafae\source\repos\CountrySource\CountrySource.Application\obj\Debug\CountrySource.Application.csproj.CopyComplete
+C:\Users\Rafae\source\repos\CountrySource\CountrySource.Application\obj\Debug\CountrySource.Application.dll
+C:\Users\Rafae\source\repos\CountrySource\CountrySource.Application\obj\Debug\CountrySource.Application.pdb

@@ -1,0 +1,5 @@
+C:\Users\Rafae\source\repos\CountrySource\CountrySource.Contracts\bin\Debug\CountrySource.Contracts.dll
+C:\Users\Rafae\source\repos\CountrySource\CountrySource.Contracts\bin\Debug\CountrySource.Contracts.pdb
+C:\Users\Rafae\source\repos\CountrySource\CountrySource.Contracts\obj\Debug\CountrySource.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\Rafae\source\repos\CountrySource\CountrySource.Contracts\obj\Debug\CountrySource.Contracts.dll
+C:\Users\Rafae\source\repos\CountrySource\CountrySource.Contracts\obj\Debug\CountrySource.Contracts.pdb

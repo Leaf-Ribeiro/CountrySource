@@ -1,0 +1,117 @@
+﻿@model CountrySource.Web.ViewModels.Cities.CityListViewModel
+
+@{
+    ViewBag.Title = "List";
+}
+
+@section scripts{
+
+    <script>
+        ajaxForm(null, function (data) {
+            var content = $(data).find("#searchList");
+            $("#searchList").replaceWith(content);
+        }, "frmSearch", true);
+
+        function deleteCity(button, id) {
+            $.ajax({
+                url: '@Url.Action("Delete", "City")',
+                dataType: 'json',
+                type: 'post',
+                data: { id },
+                success: function (data) {
+                    if (data.Success) {
+                        alert("Cidade removida com sucesso.");
+                        $(button).closest('tr').remove();
+                    }
+                },
+                error: function () {
+                    alert("Houve um erro ao processar a requisiçao.");
+                },
+                beforeSend: function () { waitButton(button); },
+                complete: function () { readyButton(button); }
+            });
+        }
+    </script>
+}
+
+<div id="">
+    <h3>Cidades</h3>
+    <div class="row">
+        <div class="btn-group">
+            <button class="btn btn-default top-right">
+                <span>
+                    Adicionar
+                    <i class="glyphicon glyphicon-plus"></i>
+                </span>
+            </button>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-default">
+                <div class="nav nav-justified navbar-nav">
+
+                    @using (Html.BeginForm("List", "City", FormMethod.Post, new { Id = "frmSearch", @class = "navbar-form navbar-search" }))
+                    {
+                        <div class="input-group">
+                            @Html.TextBoxFor(a => a.SearchText, new { @placeholder = "Search...", @class = "form-control" })
+
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-search btn-info">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                    <span class="label-icon">Buscar</span>
+                                </button>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table-hover table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Nome
+                    </th>
+                    <th>
+                        Estado
+                    </th>
+                    <th width="20">
+
+                    </th>
+                    <th width="20">
+
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody id="searchList">
+                @foreach (var city in Model.Cities)
+                {
+                    <tr>
+                        <td>
+                            @city.Name
+                        </td>
+                        <td>
+                            @city.StateName
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Update", "City", new { id = city.Id })" class="btn btn-sm">
+                                <i class="glyphicon glyphicon-trash"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#" class="btn btn-sm" onclick="deleteCity(this, '@city.Id');">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
