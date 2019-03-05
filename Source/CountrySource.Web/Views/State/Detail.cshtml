@@ -22,7 +22,7 @@
     @for (var i = 0; i < Model.Cities.Count; i += 4)
     {
         <div class="row">
-            @foreach (var item in Model.States.Skip(i).Take(4))
+            @foreach (var item in Model.Cities.Skip(i).Take(4))
             {
                 <div class="col-md-3">
                     <div class="form-group">
