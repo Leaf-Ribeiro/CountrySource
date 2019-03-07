@@ -8,3 +8,4 @@ E:\Projetos\CountrySource\Source\CountrySource.Contracts\bin\Debug\CountrySource
 E:\Projetos\CountrySource\Source\CountrySource.Contracts\obj\Debug\CountrySource.Contracts.csproj.CoreCompileInputs.cache
 E:\Projetos\CountrySource\Source\CountrySource.Contracts\obj\Debug\CountrySource.Contracts.dll
 E:\Projetos\CountrySource\Source\CountrySource.Contracts\obj\Debug\CountrySource.Contracts.pdb
+E:\Projetos\CountrySource\Source\CountrySource.Contracts\obj\Debug\CountrySource.Contracts.csprojAssemblyReference.cache
