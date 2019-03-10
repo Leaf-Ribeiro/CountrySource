@@ -1,0 +1,240 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+/* ////////////////// SUMMARY ERROR ////////////////////// */
+#error_msg {
+		display:none;
+		border:1px solid #900;
+		background-color:#FCC;
+		color:#900;
+		font-size:10px;
+		line-height:15px;
+		padding:2px 5px;
+		margin:3px 0px;
+}
+.validation-summary-errors {
+	display:block;
+	border-bottom:1px solid #700;
+	background-color:#c00;
+	color:#fff;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 20px;
+	padding: 10px;
+	/*margin: 5px 0;*/
+	opacity: 0.8;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left:0;
+	text-align: center;
+	z-index: 99999999;
+}	
+.validation-summary-errors li {
+	display: block;
+}	
+.validation-summary-valid {
+	display:none !important;
+}	
+#success_msg{
+	display:none;
+	border-bottom:1px solid #063;
+	background-color:#beb;
+	color:#063;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 20px;
+	padding: 10px;
+	opacity: 0.9;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left:0;
+	text-align: center;
+	z-index: 99999999999999999999999999999999999999999999;
+}
+.msg_close {
+    margin-right: 21px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor:pointer;
+    z-index:99995;
+}
+/***** loading ***********/
+.loader-small {
+    display:block;
+    width: 32px;
+    height: 32px;
+    margin-top: 10px;
+    background: url('../images/loader-small.gif') top left no-repeat;
+    float: right;
+}
+
+.advanced-message {
+  margin: 5px !important;
+}
+.advanced-message .user,
+.advanced-message .team,
+.advanced-message .allusers {
+  border-radius: 8px 8px 8px 8px !important;
+  color: #FFFFFF;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 18px;
+  margin: 5px 2px;
+  padding: 0 8px;
+}
+.advanced-message .user a,
+.advanced-message .team a,
+.advanced-message .allusers a {
+  border-left: 1px dotted #CCCCCC;
+  color: #CCCCCC;
+  margin-left: 3px;
+  padding-left: 4px;
+  text-decoration: none;
+}
+.advanced-message .user a:hover,
+.advanced-message .team a:hover,
+.advanced-message .allusers a:hover {
+  background-color: #fff;
+  color: #999;
+}
+.advanced-message .allusers {
+  background-color: #358A29;
+}
+.advanced-message .user {
+  background-color: #999;
+}
+.advanced-message .team {
+  background-color: #2C5182;
+}
+
+table ul li {
+
+    list-style:none;
+
+}
+table ul {
+
+    padding:0;
+    margin:0;
+}
+/*.fancybox-inner
+{
+    height:0px !important;
+    width:0px !important;
+}*/
+
+.login-box input[type="button"], input[type="submit"]  {
+    color: #fff !important;
+}
+
+
+a.multiSelect {
+	background: #FFF url(images/dropdown.blue.png) right center no-repeat;
+	border: solid 1px #BBB;
+	padding-right: 20px;
+	position: relative;
+	cursor: default;
+	text-decoration: none;
+	color: black;
+	display: -moz-inline-stack;
+	display: inline-block;
+	vertical-align: top;
+}
+
+a.multiSelect:link, a.multiSelect:visited, a.multiSelect:hover, a.multiSelect:active {
+	color: black;
+	text-decoration: none;
+}
+
+a.multiSelect span
+{
+	margin: 1px 0px 1px 3px;
+	overflow: hidden;
+	display: -moz-inline-stack;
+	display: inline-block;
+	white-space: nowrap;
+}
+
+a.multiSelect.hover {
+	background-image: url(images/dropdown.blue.hover.png);
+}
+
+a.multiSelect.active, 
+a.multiSelect.focus {
+	border: inset 1px #000;
+}
+
+a.multiSelect.active {
+	background-image: url(images/dropdown.blue.active.png);
+}
+
+.multiSelectOptions {
+	margin-top: -1px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	border: solid 1px #B2B2B2;
+	background: #FFF;
+}
+
+.multiSelectOptions LABEL {
+	padding: 0px 2px;
+	display: block;
+	white-space: nowrap;
+}
+
+.multiSelectOptions LABEL.optGroup
+{
+	font-weight: bold;
+}
+
+.multiSelectOptions .optGroupContainer LABEL
+{
+	padding-left: 10px;
+}
+
+.multiSelectOptions.optGroupHasCheckboxes .optGroupContainer LABEL
+{
+	padding-left: 18px;
+}
+
+.multiSelectOptions input{
+	vertical-align: middle;
+}
+
+.multiSelectOptions LABEL.checked {
+	background-color: #dce5f8;
+}
+
+.multiSelectOptions LABEL.selectAll {
+	border-bottom: dotted 1px #CCC;
+}
+
+.multiSelectOptions LABEL.hover {
+	background-color: #3399ff;
+	color: white;
+}

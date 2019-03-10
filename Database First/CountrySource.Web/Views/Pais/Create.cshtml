@@ -1,0 +1,53 @@
+﻿@model CountrySource.Web.ViewModels.Countries.CountryCreateViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@section scripts{
+    <script>
+        function create(control) {
+            postForm(control, function (data) {
+                if (data.Success) {
+                    successMessage(data.Message);
+                    window.location.href = "@Url.Action("List")";                
+                }
+                else {
+                    errorMessage(data.Message);
+                }
+            });
+
+            return false;
+        }
+    </script>
+}
+
+<h2>Criar Pais</h2>
+
+<section>
+    @using (Html.BeginForm("Create", "Pais", FormMethod.Post, new { }))
+    {
+        @Html.ValidationSummary()
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    @Html.DisplayFor(a => a.Name)
+                    @Html.TextBoxFor(a => a.Name, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    @Html.DisplayFor(a => a.Continent)
+                    @Html.TextBoxFor(a => a.Continent, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="btnp-group">
+                <button type="button" class="btn btn-primary" onclick="create(this);">Salvar</button>
+                <button type="reset" class="btn btn-default" onclick="window.location.href='@Url.Action("List")'">Cancelar</button>
+            </div>
+        </div>
+    }
+</section>

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CountrySourceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CountrySource.dbo.Cidade' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Cidade">
+    <Key>
+      <PropertyRef Name="cod_cidade" />
+      <PropertyRef Name="nome_cidade" />
+      <PropertyRef Name="cod_estado" />
+    </Key>
+    <Property Name="cod_cidade" Type="int" Nullable="false" />
+    <Property Name="nome_cidade" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cod_estado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="cod_estado" />
+    </Key>
+    <Property Name="cod_estado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome_estado" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cod_pais" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pais">
+    <Key>
+      <PropertyRef Name="cod_pais" />
+    </Key>
+    <Property Name="cod_pais" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome_pais" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nome_continente" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Cidade_Estado">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Cidade" Type="Self.Cidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="cod_estado" />
+      </Principal>
+      <Dependent Role="Cidade">
+        <PropertyRef Name="cod_estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Estado_Pais">
+    <End Role="Pais" Type="Self.Pais" Multiplicity="1" />
+    <End Role="Estado" Type="Self.Estado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pais">
+        <PropertyRef Name="cod_pais" />
+      </Principal>
+      <Dependent Role="Estado">
+        <PropertyRef Name="cod_pais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CountrySourceModelStoreContainer">
+    <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pais" EntityType="Self.Pais" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cidade" EntityType="Self.Cidade" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Cidade].[cod_cidade] AS [cod_cidade], 
+    [Cidade].[nome_cidade] AS [nome_cidade], 
+    [Cidade].[cod_estado] AS [cod_estado]
+    FROM [dbo].[Cidade] AS [Cidade]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Cidade_Estado" Association="Self.FK_Cidade_Estado">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Cidade" EntitySet="Cidade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Estado_Pais" Association="Self.FK_Estado_Pais">
+      <End Role="Pais" EntitySet="Pais" />
+      <End Role="Estado" EntitySet="Estado" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

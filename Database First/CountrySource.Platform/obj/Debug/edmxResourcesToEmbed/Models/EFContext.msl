@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CountrySourceModelStoreContainer" CdmEntityContainer="EFContext">
+    <EntitySetMapping Name="Cidade">
+      <EntityTypeMapping TypeName="CountrySourceModel.Cidade">
+        <MappingFragment StoreEntitySet="Cidade">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estado">
+      <EntityTypeMapping TypeName="CountrySourceModel.Estado">
+        <MappingFragment StoreEntitySet="Estado">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pais">
+      <EntityTypeMapping TypeName="CountrySourceModel.Pais">
+        <MappingFragment StoreEntitySet="Pais">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Continente" ColumnName="Continente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_Cidade_Estado" TypeName="CountrySourceModel.FK_Cidade_Estado" StoreEntitySet="Cidade">
+      <EndProperty Name="Estado">
+        <ScalarProperty Name="Id" ColumnName="EstadoId" />
+      </EndProperty>
+      <EndProperty Name="Cidade">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Estado_Pais" TypeName="CountrySourceModel.FK_Estado_Pais" StoreEntitySet="Estado">
+      <EndProperty Name="Pais">
+        <ScalarProperty Name="Id" ColumnName="PaisId" />
+      </EndProperty>
+      <EndProperty Name="Estado">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

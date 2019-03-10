@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CountrySourceModelStoreContainer" CdmEntityContainer="CountrySourceConnectionString">
+    <EntitySetMapping Name="Estadoes">
+      <EntityTypeMapping TypeName="CountrySourceModel.Estado">
+        <MappingFragment StoreEntitySet="Estado">
+          <ScalarProperty Name="Id" ColumnName="cod_estado" />
+          <ScalarProperty Name="Nome" ColumnName="nome_estado" />
+          <ScalarProperty Name="PaisId" ColumnName="cod_pais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pais1">
+      <EntityTypeMapping TypeName="CountrySourceModel.Pais">
+        <MappingFragment StoreEntitySet="Pais">
+          <ScalarProperty Name="Id" ColumnName="cod_pais" />
+          <ScalarProperty Name="Nome" ColumnName="nome_pais" />
+          <ScalarProperty Name="Continente" ColumnName="nome_continente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cidades">
+      <EntityTypeMapping TypeName="CountrySourceModel.Cidade">
+        <MappingFragment StoreEntitySet="Cidade">
+          <ScalarProperty Name="Id" ColumnName="cod_cidade" />
+          <ScalarProperty Name="Nome" ColumnName="nome_cidade" />
+          <ScalarProperty Name="EstadoId" ColumnName="cod_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

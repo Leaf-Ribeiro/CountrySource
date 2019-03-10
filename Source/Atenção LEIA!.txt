@@ -1,3 +1,0 @@
-Para criar as tabelas do banco de dados
-
-Crie o banco com o nome: CountrySource e depois rode o arquivo rakedb.bat
