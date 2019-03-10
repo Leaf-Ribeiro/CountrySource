@@ -1,0 +1,50 @@
+﻿@model CountrySource.Web.ViewModels.States.StateUpdateViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@section scripts{
+    <script>
+        function updateState(control) {
+            postForm(control, function (data) {
+                if (data.Success) {
+                    alert(data.Message);
+                    window.location.href = "@Url.Action("List")";
+                }
+            });
+
+            return false;
+        }
+    </script>
+}
+
+<h2>Atualizar Estado</h2>
+
+<section>
+    @using (Html.BeginForm("Update", "State", FormMethod.Post, new { }))
+    {
+        @Html.ValidationSummary()
+        @Html.HiddenFor(a => a.Id)
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Nome:</label>
+                    @Html.TextBoxFor(a => a.Name, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    Estado:
+                    @Html.DropDownListFor(a => a.CountryId, new SelectList(Model.Countries, "Id", "Name"), "(Selecione)", new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="btnp-group">
+                <button class="btn btn-primary" onclick="updateState(this);">Salvar</button>
+                <button type="reset" class="btn btn-default" onclick="window.location.href='@Url.Action("List")'">Cancelar</button>
+            </div>
+        </div>
+    }
+</section>

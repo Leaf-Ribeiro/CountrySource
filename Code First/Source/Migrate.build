@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<project name="WeDare Migration" default="migrate">
+
+  <!--tools -->
+  <property name="migration.tools" value=".\packages\FluentMigrator.1.6.1\tools\Migrate.exe" />
+  <property name="environment" value="dev" dynamic="true"/>
+  <property name="version" value="0" dynamic="true"/>
+
+  <!-- build -->
+  <property name="build.dir" value="build" />
+  <property name="msbuild.args" value="" />
+ 
+  <!-- project -->
+  <property name="project.dir" value=".\"/>
+  <property name="project.migrator" value="${project.dir}\CountrySource.Migration" />
+
+  
+  <!-- migration information -->
+  <property name="migration.target" value="CountrySource.Migration.dll" />
+  <property name="migration.provider" value="SqlServer" /> 
+  
+  <!-- connectionString -->  
+  <property name="dev.connection.string" value="Server=localhost;Database=CountrySource;Trusted_Connection=True;" />    
+
+  <property name="connection.string" value="${environment}.connection.string" />
+  
+  <!-- root action -->
+  <target name="migrate" depends="compile, running, clean" description="Migration click once to server"/>
+  
+  <!-- compile -->
+  <target name="compile">
+    <fail unless="${property::exists('task')}" message="You must specify a value for the 'task' property."/>
+    <echo message="Build Directory is ${build.dir}" />
+    <exec program="C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\msbuild.exe">
+      <arg value="${project.migrator}\CountrySource.Migration.csproj" />
+      <arg value="/p:OutputPath=${path::get-full-path(build.dir)}" />
+      <arg value="${msbuild.args}" />
+    </exec>
+  </target>
+  
+  <!--migration to dev database-->
+  <target name="running">
+    <echo message="Executing the process of migration database" />	
+    <exec program="${migration.tools}">
+      <arg value="/db" />
+      <arg value="${migration.provider}" />	  
+      <arg value="/connection" />
+      <arg value="${property::get-value(connection.string)}" />	  	  
+      <arg value="/target" />
+      <arg value="${path::get-full-path(build.dir)}\${migration.target}" />
+      <arg value="/task"/>
+      <arg value="${task}" />
+      <arg value="/wd"/>
+      <arg value="${path::get-full-path(build.dir)}" />
+      <arg value="/version"/>
+      <arg value="${version}" />
+    </exec>
+  </target>
+
+  <!-- clean -->
+  <target name="clean" description="Delete automated build artifacts">
+    <delete dir="${build.dir}" if="${directory::exists(property::get-value('build.dir'))}"/>
+  </target>
+
+</project>

@@ -137,3 +137,4 @@ E:\Projetos\CountrySource\Database First\CountrySource.Platform\bin\Debug\Westwi
 E:\Projetos\CountrySource\Database First\CountrySource.Platform\obj\Debug\CountrySource.Platform.csproj.CopyComplete
 E:\Projetos\CountrySource\Database First\CountrySource.Platform\obj\Debug\CountrySource.Platform.dll
 E:\Projetos\CountrySource\Database First\CountrySource.Platform\obj\Debug\CountrySource.Platform.pdb
+E:\Projetos\CountrySource\Database First\CountrySource.Platform\obj\Debug\CountrySource.Platform.csprojAssemblyReference.cache
