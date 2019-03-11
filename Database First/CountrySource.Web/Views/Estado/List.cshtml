@@ -53,7 +53,7 @@
         <div class="col-md-12">
             <nav class="navbar navbar-default">
                 <div class="nav nav-justified navbar-nav">
-                    @using (Html.BeginForm("List", "State", FormMethod.Post, new { Id = "frmSearch", @class = "navbar-form navbar-search" }))
+                    @using (Html.BeginForm("List", "Estado", FormMethod.Post, new { Id = "frmSearch", @class = "navbar-form navbar-search" }))
                     {
                         <div class="input-group">
                             @Html.TextBoxFor(a => a.SearchText, new { @placeholder = "Search...", @class = "form-control" })

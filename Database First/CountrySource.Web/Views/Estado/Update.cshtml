@@ -22,7 +22,7 @@
 <h2>Atualizar Estado</h2>
 
 <section>
-    @using (Html.BeginForm("Update", "State", FormMethod.Post, new { }))
+    @using (Html.BeginForm("Update", "Estado", FormMethod.Post, new { }))
     {
         @Html.ValidationSummary()
         @Html.HiddenFor(a => a.Id)

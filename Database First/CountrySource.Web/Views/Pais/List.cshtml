@@ -58,7 +58,7 @@
             <nav class="navbar navbar-default">
                 <div class="nav nav-justified navbar-nav">
 
-                    @using (Html.BeginForm("List", "Country", FormMethod.Post, new { Id = "frmSearch", @class = "navbar-form navbar-search" }))
+                    @using (Html.BeginForm("List", "Pais", FormMethod.Post, new { Id = "frmSearch", @class = "navbar-form navbar-search" }))
                     {
                         <div class="input-group">
                             @Html.TextBoxFor(a => a.SearchText, new { @placeholder = "Search...", @class = "form-control" })
