@@ -39,10 +39,10 @@ namespace CountrySource.Web.ViewModels.Cidades
 
             public int Id { get; set; }
 
-            [Display(Name = "Name", ResourceType = typeof(Resources.Language))]
+            [Display(Name = "Name", ResourceType = typeof(Resources.Resources))]
             public string Nome { get; set; }
 
-            [Display(Name = "State", ResourceType = typeof(Resources.Language))]
+            [Display(Name = "State", ResourceType = typeof(Resources.Resources))]
             public string EstadoNome { get; set; }
         }
     }

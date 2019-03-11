@@ -30,12 +30,12 @@ namespace CountrySource.Web.ViewModels.Cidades
 
         public int? Id { get; set; }
 
-        [Display(Name = "Name", ResourceType = typeof(Resources.Language))]
-        [Required(ErrorMessage = "Nome obrigatório")]
+        [Display(Name = "Name", ResourceType = typeof(Resources.Resources))]
+        [Required(ErrorMessageResourceType = (typeof(Resources.Resources)), ErrorMessageResourceName = "NAME_REQUIRED")]
         public string Name { get; set; }
 
-        [Display(Name = "Name", ResourceType = typeof(Resources.Language))]
-        [Required(ErrorMessage = "Estado obrigatório")]
+        [Display(Name = "Name", ResourceType = typeof(Resources.Resources))]
+        [Required(ErrorMessageResourceType = (typeof(Resources.Resources)), ErrorMessageResourceName = "STATE_REQUIRED")]
         public int? StateId { get; set; }
         public IList<StateViewModel> States { get; set; }
 

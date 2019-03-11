@@ -38,9 +38,9 @@ namespace CountrySource.Web.ViewModels.Countries
             }
 
             public int Id { get; set; }
-            [Display(Name = "Name", ResourceType = typeof(Resources.Language))]
+            [Display(Name = "Name", ResourceType = typeof(Resources.Resources))]
             public string Name { get; set; }
-            [Display(Name = "Continent", ResourceType = typeof(Resources.Language))]
+            [Display(Name = "Continent", ResourceType = typeof(Resources.Resources))]
             public string Continent { get; set; }
         }
     }

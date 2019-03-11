@@ -16,26 +16,26 @@ namespace CountrySource.Web.Controllers
 
         }
 
-        //protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
-        //{
-        //    string cultureName = RouteData.Values["culture"] as string;
+        protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
+        {
+            string cultureName = null;
 
-        //    if (cultureName == null)
-        //        cultureName = Request.UserLanguages != null && Request.UserLanguages.Length > 0 ? Request.UserLanguages[0] : null; // obtain it from HTTP header AcceptLanguages
+            // Attempt to read the culture cookie from Request
+            HttpCookie cultureCookie = Request.Cookies["_culture"];
+            if (cultureCookie != null)
+                cultureName = cultureCookie.Value;
+            else
+                cultureName = Request.UserLanguages != null && Request.UserLanguages.Length > 0 ?
+                        Request.UserLanguages[0] :  // obtain it from HTTP header AcceptLanguages
+                        null;
+            // Validate culture name
+            cultureName = CultureHelper.GetImplementedCulture(cultureName); // This is safe
 
-        //    cultureName = CultureHelper.GetImplementedCulture(cultureName); // Veja mais abaixo na resposta
+            // Modify current thread's cultures            
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureName);
+            Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
 
-        //    if (RouteData.Values["culture"] as string != cultureName)
-        //    {
-        //        // Força uma cultura válida na URL
-        //        RouteData.Values["culture"] = cultureName.ToLowerInvariant();
-        //        Response.RedirectToRoute(RouteData.Values);
-        //    }
-
-        //    Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureName);
-        //    Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
-
-        //    return base.BeginExecuteCore(callback, state);
-        //}
+            return base.BeginExecuteCore(callback, state);
+        }
     }
 }

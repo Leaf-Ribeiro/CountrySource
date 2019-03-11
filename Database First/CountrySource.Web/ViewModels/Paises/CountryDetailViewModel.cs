@@ -27,9 +27,9 @@ namespace CountrySource.Web.ViewModels.Countries
         }
 
         public int? Id { get; set; }
-        [Display(Name = "Name", ResourceType = typeof(Resources.Language))]
+        [Display(Name = "Name", ResourceType = typeof(Resources.Resources))]
         public string Name { get; set; }
-        [Display(Name = "Continent", ResourceType = typeof(Resources.Language))]
+        [Display(Name = "Continent", ResourceType = typeof(Resources.Resources))]
         public string Continent { get; set; }
         public IList<StateViewModel> States { get; set; }
 
@@ -42,7 +42,7 @@ namespace CountrySource.Web.ViewModels.Countries
             }
 
             public int? Id { get; set; }
-            [Display(Name = "State", ResourceType = typeof(Resources.Language))]
+            [Display(Name = "State", ResourceType = typeof(Resources.Resources))]
             public string Name { get; set; }
         }
     }

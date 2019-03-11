@@ -31,12 +31,12 @@ namespace CountrySource.Web.ViewModels.States
         [Required]
         public int? Id { get; set; }
 
-        [Display(Name = "Name", ResourceType = typeof(Resources.Language))]
-        [Required(ErrorMessage = "Nome obrigatório")]
+        [Display(Name = "Name", ResourceType = typeof(Resources.Resources))]
+        [Required(ErrorMessageResourceName = "NAME_REQUIRED", ErrorMessageResourceType = (typeof(Resources.Resources)))]
         public string Name { get; set; }
 
-        [Display(Name = "Country", ResourceType = typeof(Resources.Language))]
-        [Required(ErrorMessage = "País obrigatório")]
+        [Display(Name = "Country", ResourceType = typeof(Resources.Resources))]
+        [Required(ErrorMessageResourceName = "COUNTRY_REQUIRED", ErrorMessageResourceType = (typeof(Resources.Resources)))]
         public int? CountryId { get; set; }
         public IList<CountryViewModel> Countries { get; set; }
 

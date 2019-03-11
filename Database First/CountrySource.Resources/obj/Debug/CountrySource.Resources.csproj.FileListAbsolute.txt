@@ -1,0 +1,11 @@
+E:\Projetos\CountrySource\Database First\CountrySource.Resources\bin\Debug\CountrySource.Resources.dll
+E:\Projetos\CountrySource\Database First\CountrySource.Resources\bin\Debug\CountrySource.Resources.pdb
+E:\Projetos\CountrySource\Database First\CountrySource.Resources\bin\Debug\pt-BR\CountrySource.Resources.resources.dll
+E:\Projetos\CountrySource\Database First\CountrySource.Resources\obj\Debug\CountrySource.Resources.csprojAssemblyReference.cache
+E:\Projetos\CountrySource\Database First\CountrySource.Resources\obj\Debug\CountrySource.Resources.Resources.resources
+E:\Projetos\CountrySource\Database First\CountrySource.Resources\obj\Debug\CountrySource.Resources.Resources.pt-BR.resources
+E:\Projetos\CountrySource\Database First\CountrySource.Resources\obj\Debug\CountrySource.Resources.csproj.GenerateResource.cache
+E:\Projetos\CountrySource\Database First\CountrySource.Resources\obj\Debug\CountrySource.Resources.csproj.CoreCompileInputs.cache
+E:\Projetos\CountrySource\Database First\CountrySource.Resources\obj\Debug\pt-BR\CountrySource.Resources.resources.dll
+E:\Projetos\CountrySource\Database First\CountrySource.Resources\obj\Debug\CountrySource.Resources.dll
+E:\Projetos\CountrySource\Database First\CountrySource.Resources\obj\Debug\CountrySource.Resources.pdb

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CountrySource.Web.Resources {
+namespace CountrySource.Resources {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace CountrySource.Web.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Language {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Language() {
+        internal Resources() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace CountrySource.Web.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CountrySource.Web.Resources.Language", typeof(Language).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CountrySource.Resources.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -79,11 +79,29 @@ namespace CountrySource.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Continente obrigatório..
+        /// </summary>
+        public static string CONTINENT_REQUIRED {
+            get {
+                return ResourceManager.GetString("CONTINENT_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to País.
         /// </summary>
         public static string Country {
             get {
                 return ResourceManager.GetString("Country", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to País obrigatório..
+        /// </summary>
+        public static string COUNTRY_REQUIRED {
+            get {
+                return ResourceManager.GetString("COUNTRY_REQUIRED", resourceCulture);
             }
         }
         
@@ -97,11 +115,29 @@ namespace CountrySource.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nome obrigatório..
+        /// </summary>
+        public static string NAME_REQUIRED {
+            get {
+                return ResourceManager.GetString("NAME_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Estado.
         /// </summary>
         public static string State {
             get {
                 return ResourceManager.GetString("State", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Estado obrigatório..
+        /// </summary>
+        public static string STATE_REQUIRED {
+            get {
+                return ResourceManager.GetString("STATE_REQUIRED", resourceCulture);
             }
         }
     }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using CountrySource.Resources;
 using System.Web;
 
 namespace CountrySource.Web.ViewModels.Cidades
@@ -21,12 +22,12 @@ namespace CountrySource.Web.ViewModels.Cidades
                 states.ToList().ForEach(item => { States.Add(new StateViewModel(item.Id, item.Nome)); });
         }
 
-        [Display(Name = "Name", ResourceType = typeof(Resources.Language))]
-        [Required(ErrorMessage = "Nome obrigatório")]
+        [Display(Name = "Name", ResourceType = typeof(Resources.Resources))]
+        [Required(ErrorMessageResourceType = (typeof(Resources.Resources)), ErrorMessageResourceName = "NAME_REQUIRED")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Estado obrigatório")]
+        [Required(ErrorMessageResourceType = (typeof(Resources.Resources)), ErrorMessageResourceName = "STATE_REQUIRED")]
 
-        [Display(Name = "State", ResourceType = typeof(Resources.Language))]
+        [Display(Name = "State", ResourceType = typeof(Resources.Resources))]
         public int? StateId { get; set; }
         public IList<StateViewModel> States { get; set; }
 

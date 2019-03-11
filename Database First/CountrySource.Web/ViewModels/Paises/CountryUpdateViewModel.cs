@@ -26,12 +26,12 @@ namespace CountrySource.Web.ViewModels.Countries
 
         [Required]
         public int? Id { get; set; }
-        [Display(Name = "Name", ResourceType = typeof(Resources.Language))]
-        [Required(ErrorMessage = "Nome obrigatório")]
+        [Display(Name = "Name", ResourceType = typeof(Resources.Resources))]
+        [Required(ErrorMessageResourceName = "COUNTRY_REQUIRED", ErrorMessageResourceType = typeof(Resources.Resources))]
         public string Name { get; set; }
 
-        [Display(Name = "Continent", ResourceType = typeof(Resources.Language))]
-        [Required(ErrorMessage = "Continente obrigatório")]
+        [Display(Name = "Continent", ResourceType = typeof(Resources.Resources))]
+        [Required(ErrorMessageResourceName = "CONTINENT_REQUIRED", ErrorMessageResourceType = typeof(Resources.Resources))]
         public string Continent { get; set; }
 
 

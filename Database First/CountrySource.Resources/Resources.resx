@@ -123,13 +123,25 @@
   <data name="Continent" xml:space="preserve">
     <value>Continente</value>
   </data>
+  <data name="CONTINENT_REQUIRED" xml:space="preserve">
+    <value>Continente obrigatório.</value>
+  </data>
   <data name="Country" xml:space="preserve">
     <value>País</value>
+  </data>
+  <data name="COUNTRY_REQUIRED" xml:space="preserve">
+    <value>País obrigatório.</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Nome</value>
   </data>
+  <data name="NAME_REQUIRED" xml:space="preserve">
+    <value>Nome obrigatório.</value>
+  </data>
   <data name="State" xml:space="preserve">
     <value>Estado</value>
+  </data>
+  <data name="STATE_REQUIRED" xml:space="preserve">
+    <value>Estado obrigatório.</value>
   </data>
 </root>

@@ -179,11 +179,6 @@
     <Compile Include="Helpers\ControllerFactory.cs" />
     <Compile Include="Helpers\CultureHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\Language.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Language.resx</DependentUpon>
-    </Compile>
     <Compile Include="ViewModels\Cidades\CityCreateViewModel.cs" />
     <Compile Include="ViewModels\Cidades\CityListViewModel.cs" />
     <Compile Include="ViewModels\Cidades\CityUpdateViewModel.cs" />
@@ -270,15 +265,13 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Language.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Language.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CountrySource.Platform\CountrySource.Platform.csproj">
       <Project>{68173568-9681-49b7-b298-07a35f0c09cc}</Project>
       <Name>CountrySource.Platform</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CountrySource.Resources\CountrySource.Resources.csproj">
+      <Project>{0a9da5a6-1d4b-43d9-ba0a-ba439feb1d71}</Project>
+      <Name>CountrySource.Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
