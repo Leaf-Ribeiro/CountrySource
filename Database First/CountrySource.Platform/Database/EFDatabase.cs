@@ -52,7 +52,7 @@ namespace CountrySource.Platform.Database
         public Pais GetById(int id)
         {
             return context.Set<Pais>()
-                          .Include("Estado")
+                          .Include("Estados")
                           .FirstOrDefault(a => a.Id == id);
         }
 
@@ -116,7 +116,7 @@ namespace CountrySource.Platform.Database
         {
             return context.Set<Estado>()
                           .Include("Pais")
-                          .Include("Cidade")
+                          .Include("Cidades")
                           .FirstOrDefault(a => a.Id == id);
         }
 
@@ -124,14 +124,14 @@ namespace CountrySource.Platform.Database
         {
             return context.Set<Estado>()
                           .Include("Pais")
-                          .Include("Cidade")
+                          .Include("Cidades")
                           .FirstOrDefault(a => a.Nome.Contains(nome));
         }
 
         public IList<Estado> FindAllEstados()
         {
             return context.Set<Estado>()
-                          .Include("Cidade")
+                          .Include("Cidades")
                           .Include("Pais")
                           .ToList();
         }

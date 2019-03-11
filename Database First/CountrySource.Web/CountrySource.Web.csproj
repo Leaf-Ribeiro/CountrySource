@@ -270,28 +270,16 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CountrySource.Application\CountrySource.Application.csproj">
-      <Project>{11CD2CC3-1E2B-4931-97D5-39F28C324ED1}</Project>
-      <Name>CountrySource.Application</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CountrySource.Contracts\CountrySource.Contracts.csproj">
-      <Project>{46B801D6-1E78-47C8-B92A-F0C19778E508}</Project>
-      <Name>CountrySource.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CountrySource.Domain\CountrySource.Domain.csproj">
-      <Project>{00193362-98EE-441D-A94C-FD1A1D1AEBBD}</Project>
-      <Name>CountrySource.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CountrySource.Platform\CountrySource.Platform.csproj">
-      <Project>{68173568-9681-49B7-B298-07A35F0C09CC}</Project>
-      <Name>CountrySource.Infrastructure</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Resources\Language.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Language.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CountrySource.Platform\CountrySource.Platform.csproj">
+      <Project>{68173568-9681-49b7-b298-07a35f0c09cc}</Project>
+      <Name>CountrySource.Platform</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

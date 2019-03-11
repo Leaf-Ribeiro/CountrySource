@@ -17,14 +17,15 @@ namespace CountrySource.Platform.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Estado()
         {
-            this.Cidade = new HashSet<Cidade>();
+            this.Cidades = new HashSet<Cidade>();
         }
     
         public int Id { get; set; }
         public string Nome { get; set; }
+        public int PaisId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cidade> Cidade { get; set; }
+        public virtual ICollection<Cidade> Cidades { get; set; }
         public virtual Pais Pais { get; set; }
     }
 }

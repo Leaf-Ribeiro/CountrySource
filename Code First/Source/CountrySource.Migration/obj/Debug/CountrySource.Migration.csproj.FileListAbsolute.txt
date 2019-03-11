@@ -20,3 +20,13 @@ E:\Projetos\CountrySource\Source\CountrySource.Migration\obj\Debug\CountrySource
 E:\Projetos\CountrySource\Source\build\CountrySource.Migration.dll
 E:\Projetos\CountrySource\Source\build\CountrySource.Migration.pdb
 E:\Projetos\CountrySource\Source\CountrySource.Migration\obj\Debug\CountrySource.Migration.csprojResolveAssemblyReference.cache
+E:\Projetos\CountrySource\Code First\Source\build\CountrySource.Migration.dll
+E:\Projetos\CountrySource\Code First\Source\build\CountrySource.Migration.pdb
+E:\Projetos\CountrySource\Code First\Source\CountrySource.Migration\obj\Debug\CountrySource.Migration.dll
+E:\Projetos\CountrySource\Code First\Source\CountrySource.Migration\obj\Debug\CountrySource.Migration.pdb
+E:\Projetos\CountrySource\Code First\Source\CountrySource.Migration\bin\Debug\CountrySource.Migration.dll
+E:\Projetos\CountrySource\Code First\Source\CountrySource.Migration\bin\Debug\CountrySource.Migration.pdb
+E:\Projetos\CountrySource\Code First\Source\CountrySource.Migration\bin\Debug\FluentMigrator.dll
+E:\Projetos\CountrySource\Code First\Source\CountrySource.Migration\bin\Debug\FluentMigrator.pdb
+E:\Projetos\CountrySource\Code First\Source\CountrySource.Migration\bin\Debug\FluentMigrator.xml
+E:\Projetos\CountrySource\Code First\Source\CountrySource.Migration\obj\Debug\CountrySource.Migration.csprojResolveAssemblyReference.cache

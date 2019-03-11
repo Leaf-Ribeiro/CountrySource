@@ -10,7 +10,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="EstadoId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Estado">
@@ -18,7 +18,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="PaisId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Pais">
@@ -26,8 +26,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Continente" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Continente" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <Association Name="FK_Cidade_Estado">
           <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
@@ -76,7 +76,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EstadoId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Estado" Relationship="Self.FK_Cidade_Estado" FromRole="Cidade" ToRole="Estado" />
         </EntityType>
         <EntityType Name="Estado">
@@ -84,8 +85,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Cidade" Relationship="Self.FK_Cidade_Estado" FromRole="Estado" ToRole="Cidade" />
+          <Property Name="Nome" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PaisId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cidades" Relationship="Self.FK_Cidade_Estado" FromRole="Estado" ToRole="Cidade" />
           <NavigationProperty Name="Pais" Relationship="Self.FK_Estado_Pais" FromRole="Estado" ToRole="Pais" />
         </EntityType>
         <EntityType Name="Pais">
@@ -93,17 +95,33 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Continente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Estado" Relationship="Self.FK_Estado_Pais" FromRole="Pais" ToRole="Estado" />
+          <Property Name="Nome" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Continente" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Estados" Relationship="Self.FK_Estado_Pais" FromRole="Pais" ToRole="Estado" />
         </EntityType>
         <Association Name="FK_Cidade_Estado">
           <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
           <End Role="Cidade" Type="Self.Cidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cidade">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Estado_Pais">
           <End Role="Pais" Type="Self.Pais" Multiplicity="1" />
           <End Role="Estado" Type="Self.Estado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pais">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Estado">
+              <PropertyRef Name="PaisId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <EntityContainer Name="EFContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Cidade" EntityType="Self.Cidade" />
@@ -129,6 +147,7 @@
               <MappingFragment StoreEntitySet="Cidade">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -137,6 +156,7 @@
               <MappingFragment StoreEntitySet="Estado">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="PaisId" ColumnName="PaisId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -149,22 +169,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="FK_Cidade_Estado" TypeName="CountrySourceModel.FK_Cidade_Estado" StoreEntitySet="Cidade">
-            <EndProperty Name="Estado">
-              <ScalarProperty Name="Id" ColumnName="EstadoId" />
-            </EndProperty>
-            <EndProperty Name="Cidade">
-              <ScalarProperty Name="Id" ColumnName="Id" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Estado_Pais" TypeName="CountrySourceModel.FK_Estado_Pais" StoreEntitySet="Estado">
-            <EndProperty Name="Pais">
-              <ScalarProperty Name="Id" ColumnName="PaisId" />
-            </EndProperty>
-            <EndProperty Name="Estado">
-              <ScalarProperty Name="Id" ColumnName="Id" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -180,7 +184,7 @@
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

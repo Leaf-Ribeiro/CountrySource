@@ -22,7 +22,7 @@ namespace CountrySource.Web.ViewModels.States
                 Name = state.Nome;
                 CountryName = state.Pais.Nome;
 
-                state.Cidade.ToList().ForEach(item => { Cities.Add(new CityViewModel(item.Id, item.Nome)); });
+                state.Cidades.ToList().ForEach(item => { Cities.Add(new CityViewModel(item.Id, item.Nome)); });
             }
         }
 

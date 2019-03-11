@@ -6,6 +6,7 @@
         <MappingFragment StoreEntitySet="Cidade">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -14,6 +15,7 @@
         <MappingFragment StoreEntitySet="Estado">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="PaisId" ColumnName="PaisId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -26,21 +28,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="FK_Cidade_Estado" TypeName="CountrySourceModel.FK_Cidade_Estado" StoreEntitySet="Cidade">
-      <EndProperty Name="Estado">
-        <ScalarProperty Name="Id" ColumnName="EstadoId" />
-      </EndProperty>
-      <EndProperty Name="Cidade">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="FK_Estado_Pais" TypeName="CountrySourceModel.FK_Estado_Pais" StoreEntitySet="Estado">
-      <EndProperty Name="Pais">
-        <ScalarProperty Name="Id" ColumnName="PaisId" />
-      </EndProperty>
-      <EndProperty Name="Estado">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

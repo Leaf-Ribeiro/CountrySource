@@ -5,7 +5,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="150" Nullable="false" />
     <Property Name="EstadoId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Estado">
@@ -13,7 +13,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="150" Nullable="false" />
     <Property Name="PaisId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Pais">
@@ -21,8 +21,8 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Continente" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Continente" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <Association Name="FK_Cidade_Estado">
     <End Role="Estado" Type="Self.Estado" Multiplicity="1" />

@@ -5,7 +5,8 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Nome" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EstadoId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Estado" Relationship="Self.FK_Cidade_Estado" FromRole="Cidade" ToRole="Estado" />
   </EntityType>
   <EntityType Name="Estado">
@@ -13,8 +14,9 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Cidade" Relationship="Self.FK_Cidade_Estado" FromRole="Estado" ToRole="Cidade" />
+    <Property Name="Nome" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PaisId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cidades" Relationship="Self.FK_Cidade_Estado" FromRole="Estado" ToRole="Cidade" />
     <NavigationProperty Name="Pais" Relationship="Self.FK_Estado_Pais" FromRole="Estado" ToRole="Pais" />
   </EntityType>
   <EntityType Name="Pais">
@@ -22,17 +24,33 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Continente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Estado" Relationship="Self.FK_Estado_Pais" FromRole="Pais" ToRole="Estado" />
+    <Property Name="Nome" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Continente" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Estados" Relationship="Self.FK_Estado_Pais" FromRole="Pais" ToRole="Estado" />
   </EntityType>
   <Association Name="FK_Cidade_Estado">
     <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
     <End Role="Cidade" Type="Self.Cidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cidade">
+        <PropertyRef Name="EstadoId" />
+      </Dependent>
+    </ReferentialConstraint>
   </Association>
   <Association Name="FK_Estado_Pais">
     <End Role="Pais" Type="Self.Pais" Multiplicity="1" />
     <End Role="Estado" Type="Self.Estado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pais">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Estado">
+        <PropertyRef Name="PaisId" />
+      </Dependent>
+    </ReferentialConstraint>
   </Association>
   <EntityContainer Name="EFContext" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Cidade" EntityType="Self.Cidade" />

@@ -22,7 +22,7 @@ namespace CountrySource.Web.ViewModels.Countries
                 Name = country.Nome;
                 Continent = country.Continente;
 
-                country.Estado.ToList().ForEach(item => { States.Add(new StateViewModel(item.Id, item.Nome)); });
+                country.Estados.ToList().ForEach(item => { States.Add(new StateViewModel(item.Id, item.Nome)); });
             }
         }
 
