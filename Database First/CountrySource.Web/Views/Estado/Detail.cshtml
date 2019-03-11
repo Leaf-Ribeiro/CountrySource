@@ -6,13 +6,13 @@
     <div class="row">
         <div class="col-md-4">
             <div class="form-group">
-                <label>Nome:</label>
+                @Html.LabelFor(a => a.Name)
                 @Html.TextBoxFor(a => a.Name, new { @class = "form-control", @readonly = "readonly" })
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
-                Continent:
+                @Html.LabelFor(a => a.CountryName)
                 @Html.TextBoxFor(a => a.CountryName, new { @class = "form-control", @readonly = "readonly" })
             </div>
         </div>

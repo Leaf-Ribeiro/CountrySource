@@ -6,26 +6,6 @@
 
 @section scripts{
     <script>
-        $(function () {
-            toastr.options = {
-                "closeButton": false,
-                "debug": false,
-                "newestOnTop": false,
-                "progressBar": false,
-                "positionClass": "toast-top-right",
-                "preventDuplicates": false,
-                "onclick": null,
-                "showDuration": "300",
-                "hideDuration": "1000",
-                "timeOut": "5000",
-                "extendedTimeOut": "1000",
-                "showEasing": "swing",
-                "hideEasing": "linear",
-                "showMethod": "fadeIn",
-                "hideMethod": "fadeOut"
-            };
-        });
-
         function update(control) {
             postForm(control, function (data) {
                 if (data.Success) {
@@ -49,13 +29,13 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    @Html.DisplayFor(a => a.Name)
+                    @Html.LabelFor(a => a.Name)
                     @Html.TextBoxFor(a => a.Name, new { @class = "form-control" })
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    @Html.DisplayFor(a => a.Continent)
+                    @Html.LabelFor(a => a.Continent)
                     @Html.TextBoxFor(a => a.Continent, new { @class = "form-control" })
                 </div>
             </div>
